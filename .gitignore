@@ -1,1 +1,2 @@
-data/COVID_Colombia_all_data.csv
+data/*.csv
+data/data_from_API/*.csv
