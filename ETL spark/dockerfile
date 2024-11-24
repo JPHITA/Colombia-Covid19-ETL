@@ -1,0 +1,23 @@
+# Use the official Python image from the Docker Hub
+FROM python:latest
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . .
+
+# Install Java (required for Spark)
+RUN apt-get update && apt-get install -y default-jdk
+
+# Set JAVA_HOME environment variable
+ENV JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
+
+# Install PySpark
+RUN pip install pyspark
+
+# Install any other dependencies you need
+# RUN pip install <other-dependencies>
+
+# Run a shell in the container
+CMD ["bash"]
