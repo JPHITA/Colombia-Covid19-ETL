@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install Java (required for Spark)
-RUN apt-get update && apt-get install -y default-jdk
+RUN apt-get update && apt-get install -y openjdk-17-jdk
 
 # Set JAVA_HOME environment variable
 ENV JAVA_HOME="/usr/lib/jvm/java-17-openjdk-amd64"
